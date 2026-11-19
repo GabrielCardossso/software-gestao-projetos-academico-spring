@@ -1,4 +1,6 @@
-# Gestão de Projetos e Atividades
+<img src="./.github/readme/header.svg" width="100%" alt="software-gestao-projetos-academico-spring: Trabalho prático · SENAC" />
+
+<img src="./.github/readme/sobre.svg" width="100%" alt="Sobre o projeto: API REST para gestão de projetos e atividades de uma empresa de software: projetos, atividades com prioridade e prazo, equipes com gestor e desenvolvedores, e uma consulta das atividades atrasadas." />
 
 Esse é o nosso trabalho prático de Spring Boot. A ideia nasceu de um problema bem real: uma empresa de software que anota projetos em planilhas, mensagens e cadernos, e nunca sabe direito o que está pendente, o que já acabou e o que é mais urgente. A gente montou uma API que junta tudo num lugar só.
 
