@@ -5,6 +5,9 @@ Feita com React, TypeScript, Vite, React Router e Axios, com CSS simples.
 
 ## Resumo rápido
 
+- **Senha do banco:** a senha do PostgreSQL vem da variável de ambiente `DB_SENHA` (não fica no repositório). Pelo
+  terminal, defina antes de rodar (veja "Como rodar"); pelo VS Code, coloque em `"env": { "DB_SENHA": "..." }` na
+  configuração de execução do `launch.json`.
 - **Só o backend (Swagger):** rode o `SoftwareApplication.java` pelo VS Code e abra
   `http://localhost:8080/swagger-ui.html`. Os endpoints exigem login. Faça o login pelo próprio Swagger: em
   **auth-controller**, abra `POST /auth/login`, clique em *Try it out*, preencha `email` e `senha` e clique em
@@ -28,12 +31,16 @@ Pré-requisitos: Java 17+, PostgreSQL com o banco `trabalhoAlisson` e Node.js 18
 1. **Iniciar o backend** (na pasta raiz do projeto, a que tem o `pom.xml`):
 
    ```powershell
+   # Obrigatório: senha do usuário do PostgreSQL (não fica salva no repositório)
+   $env:DB_SENHA = "sua-senha-do-postgres"
    # Opcional: senha dada aos usuários que ainda não têm senha (veja "Login")
    $env:SENHA_INICIAL = "12345678"
    .\mvnw.cmd spring-boot:run
    ```
 
-   O backend sobe em `http://localhost:8080`.
+   O backend sobe em `http://localhost:8080`. Se o banco não estiver no endereço padrão, defina também
+   `DB_URL` (padrão `jdbc:postgresql://localhost:5432/trabalhoAlisson`) e `DB_USUARIO` (padrão `postgres`).
+   Sem `DB_SENHA`, o Spring para na inicialização com o erro `Could not resolve placeholder 'DB_SENHA'`.
 
 2. **Configurar a URL do backend** (na pasta `frontend`):
 
